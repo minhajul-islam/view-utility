@@ -41,9 +41,9 @@ UIImage *_imagePattern;
     
     
     
-    CGRect textViewFrame = CGRectMake(20.0f, 20.0f, 280.0f, 124.0f);
+    CGRect textViewFrame = CGRectMake(30.0f, 10.0f, 280.0f, 124.0f);
     UITextView *textView = [[UITextView alloc] initWithFrame:textViewFrame];
-    textView.text=imagePatternValue;
+    textView.text=imageScratchedValue;
     textView.returnKeyType = UIReturnKeyDone;
 
     
