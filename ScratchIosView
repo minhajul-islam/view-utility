@@ -1,0 +1,58 @@
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import ScratchImageView from 'react-native-scratch-view';
+
+export default class ScratchIosView extends Component {
+
+   constructor(props) {
+      super(props);
+
+      this.state = {
+         onRevealPercentChanged: 0,
+         onRevealed: false,
+         coupon: 'kjkf'
+      };
+      this.onRevealPercentChanged = this.onRevealPercentChanged.bind(this);
+      this.onRevealed = this.onRevealed.bind(this);
+   }
+
+   onRevealed() {
+      this.setState({ onRevealed: "true" });
+   }
+
+   onRevealPercentChanged(e) {
+      this.setState({ onRevealPercentChanged: e });
+   }
+
+
+
+
+   render() {
+      Profile_Image = '';
+      return (
+
+         <View style={{ backgroundColor: 'white',width: 250 }}>
+
+            <ScratchImageView
+               style={{ height: 50, width: 250 }}
+               onRevealPercentChanged={this.onRevealPercentChanged}
+               onRevealed={this.onRrevealPercent}
+               imageScratched={{uri:this.props.coupon }}
+               imagePattern={{ uri: 'https://s3-media3.fl.yelpcdn.com/bphoto/Meh1qnJ-w95iitwbIF7moA/348s.jpg' }}
+            />
+           <Text>{this.state.onRevealPercentChanged}</Text>
+
+         </View>
+      );
+   }
+}
+
+const styles = StyleSheet.create({
+   container: {
+      flex: 1,
+      backgroundColor: 'white',
+      justifyContent: 'center',
+      alignItems: 'center'
+
+   }
+});
